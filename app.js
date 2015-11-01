@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var products = require('./routes/products')
 
 var app = express();
 
@@ -23,7 +24,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
+app.use('/products', products)
 app.use('/users', users);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -58,3 +61,11 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
+
+// Starting the web server
+var server = app.listen(5000, function () {
+  var host = server.address().address;
+  var port = server.address().port;
+
+  console.log('AutoSpark app listening at http://%s:%s', host, port);
+});
