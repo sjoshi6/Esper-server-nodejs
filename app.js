@@ -67,5 +67,5 @@ var server = app.listen(5000, function () {
   var host = server.address().address;
   var port = server.address().port;
 
-  console.log('AutoSpark app listening at http://%s:%s', host, port);
+  console.log('Esper API Server listening at http://%s:%s', host, port);
 });
