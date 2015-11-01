@@ -9,4 +9,13 @@ router.get('/', function(req, res, next) {
 
 });
 
+router.get('/types', function(req, res, next) {
+
+	var producttypes = ["Beauty & Grooming","Beverages","Grocery","Healthcare","Household","Nutrition & Wellness","Snack","Office"];
+    res.setHeader('Content-Type', 'application/json');
+    res.json({"productTypes": producttypes });
+
+});
+
+
 module.exports = router;
